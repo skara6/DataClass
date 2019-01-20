@@ -63,7 +63,8 @@ FROM staff JOIN address ON (staff.address_id = address.address_id);
 SELECT staff.last_name, staff.first_name, sum(amount) 
 FROM staff 
 JOIN payment ON (staff.staff_id = payment.staff_id)
-WHERE payment_date LIKE '2005-08%'; 
+WHERE payment_date LIKE '2005-08%' 
+GROUP BY first_name, last_name;
 
 #6c
 SELECT title, COUNT(actor_id) as 'Actor Count'
